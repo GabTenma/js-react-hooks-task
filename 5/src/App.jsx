@@ -2,7 +2,15 @@ import React, { useState, useCallback, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 // BEGIN (write your solution here)
+const Factorial = memo(({ getFactorial, number }) => {
+  const result = getFactorial(number);
 
+  return (
+    <p>
+      Factorial of {number} is {result}
+    </p>
+  );
+});
 // END
 
 const App = () => {
@@ -19,7 +27,7 @@ const App = () => {
   };
 
   // BEGIN (write your solution here)
-
+  const getFactorial = useCallback(factorialFunc, []);
   // END
 
   const getClassName = (currLang) => {
